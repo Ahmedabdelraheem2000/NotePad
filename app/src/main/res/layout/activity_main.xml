@@ -1,0 +1,145 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/black_1"
+    tools:context=".MainActivity">
+    <!--the usual bottom navigation bar with items-->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:clipToPadding="false"
+        android:layout_marginBottom="65dp"
+    android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+
+            <TextView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/manropeextrabold"
+                android:text="Note"
+                android:textColor="@color/white"
+                android:textSize="30dp" />
+
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/logo"
+                android:layout_alignStart="@+id/logo"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/edittext_search"
+                android:drawableStart="@drawable/search"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/manropemedium"
+                android:gravity="center|start"
+                android:hint="Search your notes"
+                android:imeOptions="actionDone"
+                android:inputType="textPersonName"
+                android:letterSpacing="0.07"
+                android:paddingStart="15dp"
+                android:paddingEnd="25dp"
+                android:textColor="@color/white"
+                android:textColorHint="#575F6E"
+                android:textSize="15dp">
+
+            </EditText>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/search"
+                android:layout_alignStart="@+id/search"
+                android:layout_alignEnd="@+id/search"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="-10dp" />
+
+            <RelativeLayout
+                android:id="@+id/note_not_found"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/search"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="50dp">
+
+                <ImageView
+                    android:id="@+id/empty"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_below="@+id/search"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/ic_empty2" />
+
+                <TextView
+                    android:id="@+id/not_found"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/empty"
+                    android:layout_alignStart="@+id/empty"
+                    android:layout_alignEnd="@+id/empty"
+
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/bold1"
+                    android:text="Not Found Note"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        android:backgroundTint="@color/new_black"
+        app:backgroundTint="@android:color/white"
+        app:fabCradleMargin="10dp"
+        app:fabAlignmentMode="end"
+        android:paddingStart="10dp"
+        app:menu="@menu/menu"
+
+        app:fabCradleRoundedCornerRadius="20dp"
+        app:fabCradleVerticalOffset="10dp"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Add_note"
+        android:onClick="Add_Note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:contentDescription="@string/app_name"
+        android:elevation="11dp"
+        app:elevation="11dp"
+        app:backgroundTint="@color/black"
+        app:layout_anchor="@id/bottomAppBar"
+        app:srcCompat="@drawable/add"
+
+        app:tint="@color/white"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

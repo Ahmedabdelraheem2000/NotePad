@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:id="@+id/add_note_class"
+    android:background="@color/black_1"
+
+    tools:context=".Add_Note">
+
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <ImageView
+                    android:id="@+id/back_add_note"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:alpha="0.7"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:foregroundTint="@android:color/white"
+                    android:onClick="back"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="-5dp"
+                    android:src="@drawable/left"
+                    android:tint="@color/blue"
+                    tools:ignore="UseAppTint" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:alpha="0.7"
+                    android:visibility="gone"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:foregroundTint="@android:color/white"
+                    android:onClick="ok"
+                    android:src="@drawable/tickdone"
+                    android:tint="@color/blue"
+                    tools:ignore="UseAppTint" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+
+                    android:layout_alignBottom="@+id/back_add_note"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+
+                    android:layout_toEndOf="@+id/back_add_note"
+                    android:background="@color/black_1"
+
+                    android:fontFamily="@font/manropeextrabold"
+                    android:hint="Title"
+                    android:inputType="textPersonName"
+                    android:nextFocusDown="@id/describe"
+
+                    android:textColor="@color/white"
+                    android:textColorHint="#737373"
+                    android:textSize="25dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/black_1"
+                        android:fontFamily="@font/bold1"
+                        android:paddingTop="6dp"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="20dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_iamge"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:cardCornerRadius="10dp"
+                android:visibility="gone"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                >
+
+                <ImageView
+                    android:id="@+id/image_new_note"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/delete"
+                    android:layout_gravity="top|end"
+                    android:onClick="delete_image"
+                    android:layout_margin="10dp"
+                    android:alpha="0.5"
+                    android:tint="#FF0000"/>
+            </androidx.cardview.widget.CardView>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:alpha="0.6"
+                    android:gravity="center|start"
+                    android:layout_weight="0.75"
+                    android:fontFamily="@font/manropelight"
+                    android:textColor="@color/white" />
+
+                <RelativeLayout
+                    android:id="@+id/relative_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:layout_weight="0.0"
+                    android:onClick="edit_labal"
+                    android:visibility="gone"
+                    android:alpha="0.5"
+
+                    android:background="@drawable/shap_labels">
+
+                    <TextView
+                        android:id="@+id/label_new_note"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/manropelight"
+                        android:gravity="center"
+                        android:letterSpacing="0.02"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_marginTop="15dp">
+
+                <View
+                    android:id="@+id/label"
+                    class="androidx.cardview.widget.CardView"
+                    android:layout_width="10dp"
+                    android:layout_height="15dp"
+                    android:layout_alignTop="@+id/describe"
+                    android:layout_alignBottom="@+id/describe"
+                    android:background="@drawable/shap_edittext"
+
+                    android:backgroundTint="@color/new_black" />
+
+                <EditText
+                    android:id="@+id/describe"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:alpha="0.8"
+                    android:background="@color/black_1"
+
+                    android:hint="Describe"
+                    android:imeOptions="actionDone"
+
+                    android:textColor="@color/white"
+                    android:textColorHint="#737373" />
+
+
+            </RelativeLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:id="@+id/taks_recycler"
+                />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <include layout="@layout/bottom_sheet"
+
+        />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

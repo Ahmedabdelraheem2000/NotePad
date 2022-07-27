@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:backgroundTint="@color/new_black"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_weight="1"
+    android:background="@color/white"
+    tools:context=".Add_Note"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iconlabel"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/task"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/iconlabel"
+                android:layout_alignBottom="@+id/iconlabel"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/iconlabel"
+                android:fontFamily="@font/manropebold"
+                android:gravity="center"
+                android:text="Add Tasks"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Add_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+
+            app:counterEnabled="true"
+            android:hint="Enter Task"
+
+
+            >
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:editable="true"
+                android:focusable="true"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+
+            <Button
+
+                android:id="@+id/done_tasks"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+
+                android:backgroundTint="@color/new_black"
+                android:imeOptions="actionDone"
+                android:text="Ok" />
+
+            <Button
+                android:id="@+id/Cancel_tasks"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@+id/done_tasks"
+
+                android:backgroundTint="@color/new_black"
+                android:imeOptions="actionDone"
+                android:text="Cancel"
+
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    android:layout_marginEnd="7dp"
+    android:id="@+id/cardnotes"
+    android:layout_marginBottom="15dp"
+    android:alpha="0.8"
+    android:clickable="true"
+    android:backgroundTint="@color/new_black"
+    android:layout_height="wrap_content">
+
+
+
+    <RelativeLayout
+        android:id="@+id/clicknote"
+
+        android:background="?android:attr/selectableItemBackground"
+
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_image_shap"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="0dp"
+            android:background="@drawable/shapphoto"
+            android:elevation="0dp"
+            app:cardElevation="0dp"
+            android:layout_alignParentTop="true">
+            <ImageView
+                android:id="@+id/image_shape"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:scaleType="fitXY"
+                android:layout_alignParentTop="true"
+                />
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_image_shap"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/manropeextrabold"
+            android:maxLines="1"
+            android:text="Tasks"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/describe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:alpha="0.8"
+            android:fontFamily="@font/manropeextralight"
+            android:letterSpacing="0.03"
+            android:lineSpacingExtra="1dp"
+            android:maxLines="6"
+
+
+            android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            android:textColor="@color/white" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_shape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/describe"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:clickable="true" />
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/recycler_shape"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/shap"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_below="@id/describe"
+                android:layout_alignStart="@+id/describe"
+                android:alpha="0.5"
+
+                android:background="@drawable/shap_labels">
+
+                <TextView
+                    android:id="@+id/shape_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginTop="4dp"
+                    android:textAlignment="center"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/manropelight"
+                    android:layout_centerInParent="true"
+                    android:letterSpacing="0.02"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/shap"
+                android:layout_weight="5"
+
+                android:layout_alignStart="@+id/shap"
+                android:alpha="0.8"
+                android:fontFamily="@font/manropeextralight"
+                android:gravity="center|end"
+                android:text="Sun, 8:00"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

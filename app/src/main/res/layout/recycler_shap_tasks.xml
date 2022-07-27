@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+
+
+    android:layout_height="wrap_content">
+
+
+    <CheckBox
+        android:id="@+id/checkboks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:buttonTint="@color/white"
+        android:fontFamily="@font/manropelight"
+
+        android:shadowColor="#D9D9D9"
+        android:text="save"
+        android:textColor="@color/white"
+        android:textColorHint="#D9D9D9"
+
+        android:textSize="14dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
